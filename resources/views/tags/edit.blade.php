@@ -20,6 +20,7 @@
                     <input type="text" class="form-control" id="name" name="name" value="{{ $tag->name }}" required>
                 </div>
             </div>
+            @include('tags.parent_tag_select')
             <div class="mb-3 row">
                 <label class="col-sm-4 col-form-label" >@lang('admin.image')</label>
                 <div class="col-sm-1">

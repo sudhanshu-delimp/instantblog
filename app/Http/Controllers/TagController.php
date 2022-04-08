@@ -16,7 +16,7 @@ class TagController extends Controller
     
     public function index()
     {
-        $tags = Tag::orderBy('id', 'DESC')
+        $tags = Tag::where(['parent'=>0])->orderBy('id', 'DESC')
             ->paginate(30);
 
         return view('posts.tags', compact('tags'));
@@ -29,11 +29,11 @@ class TagController extends Controller
 
     public function store(Request $request)
     {
-        $attributes = request(['title', 'name', 'tag_media', 'color', 'desc']);
+        $attributes = request(['title', 'name','parent', 'tag_media', 'color', 'desc']);
 
         $this->validate(request(), [
-            'title' => 'required|unique:tags,title',
-            'name' => 'required|unique:tags,name|max:25',
+            'title' => Rule::unique('tags')->where(fn ($query) => $query->where(['title'=>$request->title,'parent'=>$request->parent])),
+            'name' => 'required|max:25',
             'tag_media' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -66,18 +66,14 @@ class TagController extends Controller
     {
         $tag = Tag::findOrFail($id);
 
-        $attributes = request(['title', 'name', 'tag_media', 'color', 'desc']);
+        $attributes = request(['title', 'name', 'parent', 'tag_media', 'color', 'desc']);
 
         $this->validate(request(), [
-            'title' => [
-                'required',
-                Rule::unique('tags')->ignore($tag->id),
-            ],
-
+            'title' => Rule::unique('tags')->where(fn ($query) => $query->where(['title'=>$request->title,'parent'=>$request->parent])->where('id','!=',$id)),
             'name' => [
                 'required',
                 'max:25',
-                Rule::unique('tags')->ignore($tag->id),
+                 Rule::unique('tags')->where(fn ($query) => $query->where(['title'=>$request->title])->where('id','!=',$id)),
             ],
 
             'tag_media' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',

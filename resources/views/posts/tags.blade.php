@@ -30,6 +30,7 @@
                     <td><a href="{{ url('/cats/' . $tag->id . '/edit') }}">@lang('admin.edit')</a></td>
                     <td><a class="color-delete" href="{{ url('/cats/' . $tag->id) }}">@lang('admin.delete')</a></td>
                 </tr>
+                @include('tags.child_tag_list')
                 @empty
                 @lang('admin.nocatfound')                
                 @endforelse

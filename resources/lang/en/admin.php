@@ -106,4 +106,6 @@ return [
     'banuser' => 'Ban User?',
     'banned' => 'Banned',
     'userbanned' => 'Your Account is banned',
+    'catparent' => 'Parent Category',
+    'catparentdesc' => 'Choose this option if you want to make it as a sub category.',
 ];

@@ -49,6 +49,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('tags', \App\Models\Tag::all());
         });
 
+        view()->composer('tags.parent_tag_select', function ($view) {
+            $view->with('parenttags', \App\Models\Tag::where('parent', 0)->get());
+        });
+
         view()->composer('layouts.nav', function ($view) {
             $view->with('setting', \App\Models\Setting::where('id', 1)->first());
         });

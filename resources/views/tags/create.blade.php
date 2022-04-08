@@ -20,6 +20,7 @@
                     <small id="name" class="form-text text-muted">@lang('admin.catnamedesc')</small>
                 </div>
             </div>
+            @include('tags.parent_tag_select')
             <div class="mb-3 row">
                 <label class="col-sm-4 col-form-label" >@lang('admin.image')</label>
                 <div class="col-sm-6">  

@@ -199,7 +199,7 @@ return [
         'tiktok' => 'Tiktok Post',
         'tiktok_help' => 'Enter Tiktok URL and press Embed',
         'category' => 'Category',
-        'select_category' => 'Chose Category',
+        'select_category' => 'Choose Category',
         'publish' => 'Publish',
         'update' => 'Update Post',
         'processing' => 'Processing...',
