@@ -30,7 +30,6 @@ class PublicPostController extends Controller
         $posts = Post::latest()
             ->wherePostLive(1)
             ->paginate(30);
-
         return view('public.index', compact('posts'));
     }
 
