@@ -2,6 +2,8 @@
 
 :root,
 :root.dark {
+  --bg-color-grey: #1f1d2b;
+  --bg-color-white: #252936;
   --bg-color: #1f1d2b;
   --text-color: #f8f9fa;
   --card-bg: #292e3c;
@@ -14,9 +16,13 @@
   --bg-gray: #3f4756;
   --ql-gray: #918c8c;
   --crd-shdw: none;
+  --box-border:#29282c;
+  --bg-grey-box:#252936;
 }
 
 :root.light {
+  --bg-color-grey: #f0f2f5;
+  --bg-color-white: #fff;
   --bg-color: #f7f7f7;
   --text-color: #212529;
   --card-bg: #ffffff;
@@ -29,6 +35,8 @@
   --bg-gray: #e9ecef;
   --ql-gray: #444;
   --crd-shdw: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --box-border:#ced0d4;
+  --bg-grey-box:#f0f2f5;
 }
 
 html {
