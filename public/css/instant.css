@@ -2,9 +2,9 @@
 
 :root,
 :root.dark {
-  --bg-color-grey: #1f1d2b;
-  --bg-color-white: #252936;
-  --bg-color: #1f1d2b;
+  --bg-color-grey: #212121;
+  --bg-color-white: #1A1A1A;
+  --bg-color: #1A1A1A;
   --text-color: #f8f9fa;
   --card-bg: #292e3c;
   --card-brd: none;
@@ -16,11 +16,13 @@
   --bg-gray: #3f4756;
   --ql-gray: #918c8c;
   --crd-shdw: none;
-  --box-border:#29282c;
-  --bg-grey-box:#252936;
+  --box-border:#1A1A1A;
+  --bg-grey-box:#0f0d0a;
+  --tab-bg:#050505;
 }
 
 :root.light {
+  --tab-bg:#fff;
   --bg-color-grey: #f0f2f5;
   --bg-color-white: #fff;
   --bg-color: #f7f7f7;

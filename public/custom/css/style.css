@@ -1,9 +1,21 @@
 body, html {
     padding: 0;
     margin: 0;
-    font-family: "Red Hat Display", sans-serif;
+    font-family: "Red Hat Display", sans-serif !important;
 }
-
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900;
+}
+i {
+    font-family: "Font Awesome 6 Brands" !important;
+}
+nav#mainnav i {
+    font-family: 'instanticon' !important;
+}
+.social--data i {
+    color: #606770;
+}
 /* tab slider */
 
 .main--container {
@@ -16,7 +28,7 @@ a {
     text-decoration: none;
 }
 .tab--slider {
-    padding: 100px 0;
+    padding: 4rem 0;
 }
 .tab--slider .main--container {
     padding: 0px 0px;
@@ -24,7 +36,9 @@ a {
 .main--title, .tab--titles {
     padding: 0px 15px;
 }
-
+.dark .slider--img::before {
+    filter: invert(1);
+}
 .main--title h2 {
     font-size: 36px;
     font-weight: 700;
@@ -45,9 +59,12 @@ a {
     font-weight: 700;
     font-size: 18px;
     color: #878787;
-    background-color: var(--bg-color-white);
+    background-color: var(--tab-bg);
     outline: none;
     text-decoration: none;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
 }
 .tab--titles ul li a.active--tab {
     border: 1px solid transparent;
@@ -213,7 +230,7 @@ a {
     margin: 0 -15px;
 }
 .tab--slider .tab--slider--inner {
-    min-height: 533px;
+    min-height: auto;
 }
 /* tab slider */
 .post-cat-list {
@@ -540,21 +557,10 @@ a {
 }
 /* Featured post end */
 /* client slide */
-.client_section .inner_box {
-    height: 180px;
-}
 .client_section .main--title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.client_section .box_item {
-    height: 180px;
-}
-.client_section .box_item img {
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
 }
 .client_section .slide img {
     width: 100%;
@@ -581,13 +587,11 @@ a {
 .client_section {
     padding: 1rem 1rem 4rem 1rem;
 }
-.client_section .box_item h5 {
+.client_section .slide h5 {
     position: absolute;
-    bottom: 24px;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    text-align: center;
+    bottom: 12px;
     color: #fff;
 }
 /* client slide end */
@@ -611,7 +615,7 @@ a {
     justify-content: space-between;
 }
 section.search_section {
-    padding: 4rem 1rem 4rem 1rem;
+    padding: 1rem 1rem 4rem 1rem;
 }
 .search_left_col .ctnt-col {
     border-color: #f0f2f5 !important;
