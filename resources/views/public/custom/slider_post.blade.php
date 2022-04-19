@@ -10,7 +10,7 @@
     @if (count($slider_post->tags))
         <div class="category">
             @foreach ($slider_post->tags as $tag)
-                <a class="hover-flip-item-wrapper" href="#" tabindex="0">
+                <a class="hover-flip-item-wrapper" href="{{url('/category/'.$tag->name)}}" tabindex="0">
                     <span class="hover-flip-item"><span data-hover="{{ $tag->title }}">{{ $tag->title }}</span></span>
                 </a> 
             @endforeach
@@ -31,7 +31,7 @@
             <h5 class="post--meta--author">
                 <div class="post-cat-list">
                     <a class="hover-flip-item-wrapper" href="#" tabindex="0">
-                    <span class="hover-flip-item"><span data-hover="Innovation">{{$slider_post->user->username}}</span></span>
+                    <span class="hover-flip-item"><span data-hover="{{$slider_post->user->username}}">{{$slider_post->user->username}}</span></span>
                     </a>                 
                 </div>
             </h5>

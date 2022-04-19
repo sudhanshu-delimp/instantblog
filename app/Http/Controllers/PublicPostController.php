@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Validator;
@@ -37,7 +38,7 @@ class PublicPostController extends Controller
     public function show(Post $post)
     {
         Post::find($post->id)->increment('counter');
-
+        Tag::find($post->tags[0]->id)->increment('counter');
         $nextid     = Post::where('id', '>', $post->id)->wherePostLive(1)->min('id');
         $previousid = Post::where('id', '<', $post->id)->wherePostLive(1)->max('id');
 

@@ -15,7 +15,9 @@ class PublicTagController extends Controller
         ->orderBy('id', 'DESC')
         ->wherePostLive(1)
         ->paginate(30);
-
+        if($tag->parent == 0){
+            Tag::find($tag->id)->increment('counter');
+        }
         return view('public.index', compact('posts', 'tag'));
     }
 

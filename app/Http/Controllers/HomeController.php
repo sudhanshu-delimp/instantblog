@@ -37,7 +37,7 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        $attributes = request(['post_title', 'post_instant', 'post_color', 'post_slug', 'post_desc', 'post_media', 'post_video', 'media_alt']);
+        $attributes = request(['post_title', 'post_instant', 'is_featured', 'post_color', 'post_slug', 'post_desc', 'post_media', 'post_video', 'media_alt']);
 
         $validator = Validator::make($request->all(), [
             'content.*' => 'required',
@@ -90,6 +90,9 @@ class HomeController extends Controller
             
             if (isset($request->tag_id)) {
                 $post->tags()->sync(request(['tag_id']));
+                if(!empty($request->sub_tag_id)){
+                    $post->tags()->sync(request(['tag_id','sub_tag_id']));
+                }
             } else {
                 $post->tags()->sync(array());
             }
@@ -127,7 +130,7 @@ class HomeController extends Controller
         //Update edited single post
         $post = Post::findOrFail($id);
 
-        $attributes = request(['post_title', 'post_slug', 'post_instant', 'post_color', 'post_desc', 'post_media', 'post_video', 'post_live', 'edit_id', 'media_alt']);
+        $attributes = request(['post_title', 'post_slug', 'post_instant', 'is_featured', 'post_color', 'post_desc', 'post_media', 'post_video', 'post_live', 'edit_id', 'media_alt']);
 
         $attributes['edit_id'] = Auth::user()->id;
         
@@ -192,6 +195,12 @@ class HomeController extends Controller
                 $attributes['post_instant'] = '0';
             }
 
+            if ($request->has('is_featured')) {
+                $attributes['is_featured'] = '1';
+            } else {
+                $attributes['is_featured'] = '0';
+            }
+
 
             if ($request->has('post_live')) {
                 $post->update($attributes);
@@ -202,6 +211,9 @@ class HomeController extends Controller
 
             if (isset($request->tag_id)) {
                 $post->tags()->sync(request(['tag_id']));
+                if(!empty($request->sub_tag_id)){
+                    $post->tags()->sync(request(['tag_id','sub_tag_id']));
+                }
             } else {
                 $post->tags()->sync(array());
             }
@@ -278,5 +290,19 @@ class HomeController extends Controller
         }
             
         return response()->json(['error'=> __('messages.contnotdeleted')]);
+    }
+
+    public function getChildTags(Request $request){
+        $responseData = [];
+        $responseData['selected_tag'] = 0;
+        $tag_id = $request->tag_id;
+        if(!empty($request->post_id)){
+            $post = Post::where(['id'=>$request->post_id])->first();
+            if(!empty($post->tags[1])){
+                $responseData['selected_tag'] = $post->tags[1]->id;
+            }
+        }
+        $responseData['childTags'] = \App\Models\Tag::where(['parent'=>$tag_id])->get();
+        return response()->json($responseData);
     }
 }

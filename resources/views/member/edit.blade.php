@@ -159,7 +159,22 @@
             </div>
 
             @include('posts.tagselect')
-
+            @include('posts.childtagselect')
+            <div class="mb-3 row">
+                <label class="offset-md-1 col-md-2 col-form-label">@lang('messages.form.is_featured')</label>
+                <div class="col-sm-7">
+                    <div class="form-check">
+                        @if ($post->is_featured == "1")
+                            <input class="form-check-input" type="checkbox" id="isFeatured" name="is_featured" value="1" checked>
+                        @else
+                            <input class="form-check-input" type="checkbox" id="isFeatured" name="is_featured" value="0">
+                        @endif
+                        <label class="form-check-label" for="isFeatured">
+                            @lang('messages.form.is_featured_check')
+                        </label>
+                    </div>
+                </div>
+            </div>
             @if(auth()->user()->can('moderator-post') OR $post->post_live == 1)
             <div class="mb-3 row">
                 <label for="post_live" class="offset-md-1 col-md-2 col-form-label">@lang('messages.form.publish')</label>
@@ -411,6 +426,8 @@
           handle: '.span-move',
           animation: 150
     });
+    var getChildTagsURL = "{{ url('tag/getchildtags') }}";
+    var postId = "{{$post->id}}";
     function loadEditorOnce() {
         let editors = document.querySelectorAll(".alleditor");
         if (editors.length > 0) {
@@ -434,4 +451,5 @@
     }
 </script>
 <script src="{{ asset('/js/form.js') }}"></script>
+<script src="{{ asset('/js/custom/post.js') }}"></script>
 @endpush

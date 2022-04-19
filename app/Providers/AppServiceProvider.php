@@ -45,8 +45,12 @@ class AppServiceProvider extends ServiceProvider
             $view->with('tags', \App\Models\Tag::has('posts')->latest()->paginate(30));
         });
 
+        // view()->composer('posts.tagselect', function ($view) {
+        //     $view->with('tags', \App\Models\Tag::all());
+        // });
+
         view()->composer('posts.tagselect', function ($view) {
-            $view->with('tags', \App\Models\Tag::all());
+            $view->with('tags', \App\Models\Tag::where('parent', 0)->get());
         });
 
         view()->composer('tags.parent_tag_select', function ($view) {

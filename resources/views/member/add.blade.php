@@ -142,6 +142,18 @@
                     </div>
                 </div>
                 @include('posts.tagselect')
+                @include('posts.childtagselect')
+                <div class="mb-3 row">
+                    <label class="offset-md-1 col-md-2 col-form-label">@lang('messages.form.is_featured')</label>
+                    <div class="col-sm-7">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="isFeatured" name="is_featured" value="1">
+                            <label class="form-check-label" for="isFeatured">
+                                @lang('messages.form.is_featured_check')
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div id="dynamic_field">
                 </div>
 
@@ -258,7 +270,9 @@
     Sortable.create(dynamic_field, {
           handle: '.span-move',
           animation: 150,
-    });   
+    });
+    var getChildTagsURL = "{{ url('tag/getchildtags') }}";
 </script>
 <script src="{{ asset('/js/form.js') }}"></script>
+<script src="{{ asset('/js/custom/post.js') }}"></script>
 @endpush

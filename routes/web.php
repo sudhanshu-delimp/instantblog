@@ -73,6 +73,7 @@ Route::get('unpublished', [PostController::class, 'unpublished']);
 Route::get('publishpost/{id}', [PostController::class, 'publishpost']);
 
 Route::resource('cats', TagController::class);
+Route::post('tag/getchildtags', [HomeController::class, 'getChildTags']);
 Route::resource('home', HomeController::class);
 Route::resource('users', UserController::class);
 Route::resource('pages', PageController::class);
