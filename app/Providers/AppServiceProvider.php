@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        view()->composer(['layouts.master', 'layouts.mastershow'], function ($view){
+        view()->composer(['layouts.master', 'layouts.mastershow', 'layouts.custom'], function ($view){
                 $theme = \Cookie::get('theme');
                 $setting = \App\Models\Setting::where('id', 1)->first();
                 if (empty($theme)) {
@@ -65,7 +65,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('setting', \App\Models\Setting::where('id', 1)->first());
         });
 
-        view()->composer('layouts.master', function ($view) {
+        view()->composer(['layouts.master','layouts.custom'], function ($view) {
             $view->with('setting', \App\Models\Setting::where('id', 1)->first());
         });
 

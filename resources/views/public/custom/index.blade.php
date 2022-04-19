@@ -1,5 +1,7 @@
 @extends('layouts.custom')
-
+@section('bodyclass')
+    <body class="d-flex flex-column h-100">
+@endsection
 @section('content')
 <!-- banner slider -->
     @if(!empty($slider_posts))
