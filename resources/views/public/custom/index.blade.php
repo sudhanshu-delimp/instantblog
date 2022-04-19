@@ -30,7 +30,7 @@
     @include('public.custom.home_tag_section')
 @endif
 
-@if(!empty($home_tag))
+@if(!empty($trending_topics))
     @include('public.custom.trending_topics')
 @endif
 <!-- hover img section -->

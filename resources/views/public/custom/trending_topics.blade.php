@@ -8,61 +8,15 @@
         <div class="main">
             <div class="slider slider-for"></div>
             <div class="slider slider-nav">
+                @foreach($trending_topics as $key_v=>$trending_topic)
                 <div class="inner_box">
                     <div class="box_item">
-                    <a href="#">
-                    <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/banner--slider-img.jpg" alt="">
-                    <h5 class="title"> Travel </h5></a>  
+                    <a href="{{url('/category/'.$trending_topic->name)}}">
+                    <img src="{{ url('/uploads/'.$trending_topic->tag_media) }}" alt="">
+                    <h5 class="title"> {{$trending_topic->title}} </h5></a>  
                     </div>
                 </div>
-
-                <div class="inner_box">
-                        <div class="box_item">
-                        <a href="#">
-                        <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/banner--slider-img.jpg" alt="">
-                        <h5 class="title"> Travel </h5></a>  
-                        </div>
-                </div> 
-
-                <div class="inner_box">
-                        <div class="box_item">
-                        <a href="#">
-                        <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/banner--slider-img.jpg" alt="">
-                        <h5 class="title"> Travel </h5></a>  
-                        </div>
-                </div>  
-
-                <div class="inner_box">
-                        <div class="box_item">
-                        <a href="#">
-                        <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/banner--slider-img.jpg" alt="">
-                        <h5 class="title"> Travel </h5></a>  
-                        </div>
-                </div>  
-
-                <div class="inner_box">
-                        <div class="box_item">
-                        <a href="#">
-                        <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/banner--slider-img.jpg" alt="">
-                        <h5 class="title"> Travel </h5></a>  
-                        </div>
-                </div>  
-
-                <div class="inner_box">
-                        <div class="box_item">
-                        <a href="#">
-                        <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/banner--slider-img.jpg" alt="">
-                        <h5 class="title"> Travel </h5></a>  
-                        </div>
-                </div>  
-                                        
-                <div class="inner_box">
-                        <div class="box_item">
-                        <a href="#">
-                        <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/banner--slider-img.jpg" alt="">
-                        <h5 class="title"> Travel </h5></a>  
-                        </div>
-                </div>  
+                @endforeach
             </div>
           </div>
 </div>
