@@ -6,13 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ $setting->site_name . ' - ' . $setting->site_title }}</title>
 
-<<<<<<< HEAD
-<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('/css/instant.css') }}" rel="stylesheet">
-<link href="{{ asset('/instanticon/style.css') }}" rel="stylesheet">
-
-=======
->>>>>>> 3777078d378d4b05506d11983077b14b6eb8aa10
 <link href="{{ asset('/custom/css/slick.css') }}" rel="stylesheet">
 <link href="{{ asset('/custom/css/slick-theme.css') }}" rel="stylesheet">
 <link href="{{ asset('/custom/css/style.css') }}" rel="stylesheet">
