@@ -19,11 +19,11 @@ class CustomPostController extends Controller{
                 $not_in_ids[] = $slider_post->id;
             }
         }
-        //$popular_posts = Post::orderBy('count', 'desc')->take(5)->get();
         $featured_posts = Post::where(['is_featured'=>1])->orderBy('id', 'desc')->take(2)->get();
         $home_tag = Tag::where(['id'=>1])->first();
         $home_sub_tags = Tag::where(['parent'=>$home_tag->id])->get();
         $popular_tags = Tag::orderBy('counter', 'desc')->take(4)->get();
-        return view('public.custom.index',compact('slider_posts','home_tag','home_sub_tags','popular_tags','featured_posts'));
+        $trending_topics = Tag::where(['parent'=>'0'])->whereHas('posts')->get();
+        return view('public.custom.index',compact('slider_posts','home_tag','home_sub_tags','popular_tags','featured_posts','trending_topics'));
     }
 }
