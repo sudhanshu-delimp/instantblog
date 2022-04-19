@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ $setting->site_name . ' - ' . $setting->site_title }}</title>
 
-<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+<!-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ asset('/css/instant.css') }}" rel="stylesheet">
-<link href="{{ asset('/instanticon/style.css') }}" rel="stylesheet">
+<link href="{{ asset('/instanticon/style.css') }}" rel="stylesheet"> -->
 
 <link href="{{ asset('/custom/css/slick.css') }}" rel="stylesheet">
 <link href="{{ asset('/custom/css/slick-theme.css') }}" rel="stylesheet">
