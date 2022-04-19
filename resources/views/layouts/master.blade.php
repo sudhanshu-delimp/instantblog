@@ -16,7 +16,7 @@
             {!! $setting->site_analytic !!}
         @endif
     </head>
-    @yield('bodyclass')
+    x
 
         @include('layouts.nav')
 
