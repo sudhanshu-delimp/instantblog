@@ -203,3 +203,25 @@ $(document).ready(function(){
             $( this ).removeClass('active');
         }
         );
+
+        $(document).on("click",".load_more_rest_post",function(e){
+            e.preventDefault();
+            var data = {};
+            var ele = $(this);
+            var ele_parent = ele.parent();
+            data['existing_count'] = $(".sbs_rest_post_item").length;
+            data['last_id'] = $(this).attr('last-post-id'); 
+            data['restrict_data'] = $(this).attr('restrict-data');
+            $.ajax({
+                url:getRestPostsURL,
+                method:'post',
+                data:data,
+                beforeSend: function(){
+                    ele.html('<i class="fa fa-cog fa-spin fa-2x fa-fw"></i>');
+                },
+                success: function(response){
+                    ele.remove();
+                    ele_parent.append(response.content);
+                }
+            });
+        })

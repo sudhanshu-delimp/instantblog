@@ -85,6 +85,7 @@ Route::get('auth/{driver}', [LoginController::class, 'redirectToProvider']);
 Route::get('auth/{driver}/callback', [LoginController::class, 'handleProviderCallback']);
 
 Route::get('blog', [CustomPostController::class, 'index']);
+Route::post('blog/getRestPosts', [CustomPostController::class, 'getRestPosts']);
 
 Route::get('instant/clear', function() {
    Artisan::call('cache:clear');

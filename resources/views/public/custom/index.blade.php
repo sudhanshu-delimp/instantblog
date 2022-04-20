@@ -40,58 +40,10 @@
  <!-- search section -->
 <section class="search_section">
     <div class="main--container">
-        <div class="search_left_col">
-            <div class="slider--content--inner">
-                <div class="ctnt-col">
-                            <div class="slider--content">
-                            <div class="post-cat-list">
-                            <a class="hover-flip-item-wrapper" href="#" tabindex="0">
-                            <span class="hover-flip-item"><span data-hover="Innovation">Innovation1</span></span>
-                            </a>  
-                            </div>
-                            <div class="slider--main--title">
-                            <h4>
-                            <a href="#" tabindex="0">iPadOS 14 introduces new designed specifically for iPad</a>
-                            </h4>
-                            </div>
-                            <div class="tab--hover--meta">
-                            <div class="post--meta--data">
-                            <div class="post--meta--avtaar">
-                            <img src="http://localhost/instantblog_html/assets/Images/hover--img2.jpg" alt="">
-                            </div>
-                            <div class="post--meta--content">
-                            <h5 class="post--meta--author">
-                            <div class="post-cat-list">
-                            <a class="hover-flip-item-wrapper" href="#" tabindex="0">
-                            <span class="hover-flip-item"><span data-hover="Innovation">Innovation</span></span>
-                            </a>                 
-                            </div>
-                            </h5>
-                            <ul class="post--meta--list">
-                            <li class="post--meta--date">January 24, 2021</li>
-                            <li class="post--meta--time">4 min read</li>
-                            </ul>
-                            </div>
-                            </div>
-
-                            <div class="social--data">
-                            <ul>
-                            <li><a href="#" tabindex="0"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#" tabindex="0"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            <li><a href="#" tabindex="0"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="#" tabindex="0"><i class="fa-solid fa-link"></i></a></li>
-                            </ul>
-                            </div>
-                            </div>
-                            </div>
-                </div>
-                <div class="img-col">
-                    <a href="#" tabindex="0">
-                        <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/post-column-01-390x260.jpg" alt="">
-                    </a>
-
-                </div>
-            </div>
+        <div class="search_left_col sbs_rest_posts">
+        @if(!empty($rest_posts))
+            @include('public.custom.rest_posts_section')
+        @endif
         </div>
         <div class="search_ryt_col">
         <div class="side_bar">
@@ -233,6 +185,10 @@
 </section>
  <!-- search section -->
 @endsection
-@section('script')
+
+@push('scripts')
+<script>
+    var getRestPostsURL = "{{ url('blog/getRestPosts') }}";
+</script>
 <script type="text/javascript" src="{{ asset('/custom/js/custom.js') }}"></script>
-@endsection
+@endpush

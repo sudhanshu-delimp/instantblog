@@ -24,6 +24,34 @@ class CustomPostController extends Controller{
         $home_sub_tags = Tag::where(['parent'=>$home_tag->id])->whereHas('posts')->get();
         $popular_tags = Tag::orderBy('counter', 'desc')->take(4)->get();
         $trending_topics = Tag::where(['parent'=>'0'])->whereHas('posts')->get();
-        return view('public.custom.index',compact('slider_posts','home_tag','home_sub_tags','popular_tags','featured_posts','trending_topics'));
+        $not_in_ids = implode(",",$not_in_ids);
+        $rest_posts = Post::where(['post_live'=>1])
+        ->whereNotIn('id',explode(",",$not_in_ids))
+        ->orderBy('id','desc')
+        ->take(5)
+        ->get();
+        $rest_post_count = $this->getRestPostCount();
+        $existing_count = 0;
+        return view('public.custom.index',compact('slider_posts','home_tag','home_sub_tags','popular_tags','featured_posts','trending_topics','rest_posts','rest_post_count','existing_count','not_in_ids'));
+    }
+
+    public function getRestPostCount(){
+        return Post::where(['post_live'=>1])->count();
+    }
+
+    public function getRestPosts(Request $request){
+        $responseData = [];
+        $not_in_ids = $request->restrict_data;
+        $existing_count = $request->existing_count;
+        $last_id = $request->last_id;
+        $rest_post_count = $this->getRestPostCount();
+        $rest_posts = Post::where(['post_live'=>1])
+        ->where("id","<",$last_id)
+        ->whereNotIn('id',explode(",",$not_in_ids))
+        ->orderBy('id','desc')
+        ->take(5)
+        ->get();
+        $responseData['content'] = view('public.custom.rest_posts_section',compact('rest_posts','existing_count','rest_post_count','not_in_ids'))->render();
+        return response()->json($responseData);
     }
 }
