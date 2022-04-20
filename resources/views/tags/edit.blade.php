@@ -38,6 +38,21 @@
                 </div>
             </div>
             <div class="mb-3 row">
+                <label for="desc" class="col-sm-4 col-form-label">@lang('messages.form.on_home')</label>
+                <div class="col-sm-7">
+                    <div class="form-check">
+                        @if ($tag->on_home == "1")
+                            <input class="form-check-input" type="checkbox" id="onHome" name="on_home" value="1" checked>
+                        @else
+                            <input class="form-check-input" type="checkbox" id="onHome" name="on_home" value="0" {{($tag->parent>0)?'disabled':''}}>
+                        @endif
+                        <label class="form-check-label" for="onHome">
+                            @lang('messages.form.on_home_check')
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row">
                 <label class="col-sm-4 col-form-label" >@lang('admin.catcolor')</label>
                 <div class="col-sm-6"> 
                     <div class="form-check form-check-inline mt-2">    
@@ -111,3 +126,6 @@
         </form>
     </div>
 @endsection
+@push('scripts')
+<script src="{{ asset('/js/custom/tag.js') }}"></script>
+@endpush

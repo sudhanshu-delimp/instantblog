@@ -22,8 +22,9 @@
                 <tr> 
                     <th scope="row">{{ $tag->id }}</th>
                     <td>
+                    {!!($tag->on_home == '1')?'<i class="icon-house-door nav-icon"></i>':''!!}
                         <a href="{{url('/category/' . $tag->name)}}">
-                            {{ str_limit($tag->title, 35) }}
+                             {{ str_limit($tag->title, 35) }}
                         </a>
                     </td>
                     <td><div class="cat-bx {{ $tag->color}}"></div> {{ $tag->name}}</td>

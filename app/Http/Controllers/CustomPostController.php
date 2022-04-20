@@ -20,8 +20,8 @@ class CustomPostController extends Controller{
             }
         }
         $featured_posts = Post::where(['is_featured'=>1])->orderBy('id', 'desc')->take(2)->get();
-        $home_tag = Tag::where(['id'=>1])->first();
-        $home_sub_tags = Tag::where(['parent'=>$home_tag->id])->get();
+        $home_tag = Tag::where(['on_home'=>'1'])->first();
+        $home_sub_tags = Tag::where(['parent'=>$home_tag->id])->whereHas('posts')->get();
         $popular_tags = Tag::orderBy('counter', 'desc')->take(4)->get();
         $trending_topics = Tag::where(['parent'=>'0'])->whereHas('posts')->get();
         return view('public.custom.index',compact('slider_posts','home_tag','home_sub_tags','popular_tags','featured_posts','trending_topics'));
