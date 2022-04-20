@@ -16,9 +16,10 @@
   --bg-gray: #3f4756;
   --ql-gray: #918c8c;
   --crd-shdw: none;
-  --box-border:#1A1A1A;
+  --box-border:#050505;
   --bg-grey-box:#0f0d0a;
   --tab-bg:#050505;
+  --featured-box:#1a1a1a;
 }
 
 :root.light {
@@ -39,6 +40,7 @@
   --crd-shdw: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --box-border:#ced0d4;
   --bg-grey-box:#f0f2f5;
+  --featured-box:#ced0d4;
 }
 
 html {
