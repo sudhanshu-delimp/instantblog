@@ -195,3 +195,11 @@ $(document).ready(function(){
         ]
         });
     });
+
+    $(".post_col").hover(
+        function() {
+            $(this).addClass('active');
+        }, function() {
+            $( this ).removeClass('active');
+        }
+        );

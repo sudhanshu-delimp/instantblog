@@ -10,14 +10,30 @@ body, html {
 i {
     font-family: "Font Awesome 6 Brands" !important;
 }
+a{
+    color: var(--text-color) !important;  
+}
 nav#mainnav i {
     font-family: 'instanticon' !important;
 }
 .social--data i {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-size: 14px;
+}
+.social--data i {
     color: #606770;
 }
+.main--title h2 {
+    margin: 2rem 0;
+}
 /* tab slider */
-
+.post-cat-list .category a {
+    padding: 0;
+}
+.post-cat-list .category {
+    position: initial;
+    text-align: left;
+}
 .main--container {
     max-width: 1260px;
     width: 100%;
@@ -62,6 +78,11 @@ a {
     background-color: var(--tab-bg);
     outline: none;
     text-decoration: none;
+}
+.tab--wrapper .slider-contant--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .slick-dotted.slick-slider {
     margin-bottom: 0;
@@ -108,7 +129,7 @@ a {
     border-radius: 10px;
     background: var(--bg-grey-box);
     overflow: hidden;
-    min-height: 450px;
+    min-height: 425px;
 }
 .slider-contant--main .slider-contant {
     padding: 50px 35px 0;
@@ -248,7 +269,7 @@ a {
 }
 .hover-flip-item span:before {
     position: absolute;
-    top: 18px;
+    top: 19px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -311,7 +332,7 @@ a {
 }
 .tab--hover--data .tab--hover--meta .post--meta--author .hover-flip-item span  {
     font-size: 17px ;
-    color: #000;
+    color: var(--text-color);
 }
 .social--data ul {
     display: flex;
@@ -354,7 +375,7 @@ a {
 .tab--hover--inner::before {
     position: absolute;
     content: "";
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 0px;
     height: 2px;
@@ -386,7 +407,7 @@ a {
     padding: 0px;
 }
 .most--populer {
-    padding-bottom: 5rem;
+    padding: 4rem 1rem 4rem 1rem;
    
 }
 .most--populer .main--container {
@@ -459,6 +480,7 @@ a {
     height: auto;
     border-radius: 50px;
     transition: all 0.3s;
+    line-height: 23px;
 }
 .read--post--btn a:hover {
     background-color: transparent;
@@ -494,6 +516,7 @@ a {
 }
 .slider--content--inner .slider--content > .post-cat-list a {
     color: #d93e40;
+    line-height: 20px;
 }
 /* .read--post--btn .hover-flip-item span:before {
     color: #fff;
@@ -533,7 +556,7 @@ a {
     width: 50%;
     overflow: hidden;
     border-radius: 50%;
-    min-width: 250px;
+    width: 250px;
 }
 .featured_post_wrapper .post_col h4 {
     font-size: 24px !important;
@@ -555,12 +578,21 @@ a {
 .featured_post {
     padding: 1rem 1rem 5rem 1rem;
 }
+a.hover-flip-item-wrapper {
+    line-height: 14px;
+}
 /* Featured post end */
 /* client slide */
 .client_section .main--title {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.client_section .box_item:hover img {
+    transform: scale(1.1);
+}
+.client_section .box_item img {
+    transition: all 0.5s;
 }
 .client_section .slide img {
     width: 100%;
@@ -579,13 +611,31 @@ a {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    height: 180px;
+}
+.client_section .box_item img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+.client_section .box_item h5 {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+.client_section .box_item a {
+    height: 100%;
 }
 .client_section .slide .box_item:hover img {
     transform: scale(1.1);
     min-height: 180px;
 }
 .client_section {
-    padding: 1rem 1rem 4rem 1rem;
+    padding: 4rem 1rem 4rem 1rem;
 }
 .client_section .slide h5 {
     position: absolute;
@@ -794,7 +844,7 @@ button.search-button {
         padding: 50px 0;
     }
     .most--populer {
-        padding-bottom: 3rem;
+        padding: 3rem;
     }
     .featured_post_wrapper {
         grid-template-columns: repeat(1, 1fr);
