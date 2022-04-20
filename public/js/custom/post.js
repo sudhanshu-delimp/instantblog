@@ -5,6 +5,7 @@ let token = document
 let post_select = document.getElementById('post_select');
 let sub_post_select = document.getElementById('sub_post_select');
 var data = {};
+
 post_select.onchange = function(){
     data['tag_id'] = this.value;
     if(typeof postId !== 'undefined'){

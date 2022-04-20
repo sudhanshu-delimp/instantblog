@@ -26,8 +26,8 @@
 <!-- Featured post end -->
 
 <!-- tab Section -->
-@if(!empty($home_tag))
-    @include('public.custom.home_tag_section')
+@if(!empty($home_tag) && !empty($home_sub_tags))
+    @include('public.custom.home_tag_section')  
 @endif
 
 @if(!empty($trending_topics))

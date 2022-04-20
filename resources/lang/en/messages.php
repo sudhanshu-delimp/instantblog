@@ -162,6 +162,8 @@ return [
         'imgoverlay_check' => 'Yes, use image as a background.',
         'is_featured' => 'Is featured',
         'is_featured_check' => 'Yes, use post to display in featured area.',
+        'on_home' => 'On Home Page',
+        'on_home_check' => 'Yes, use this category to show on home page, when you check this, the other category will be automatically remove form home page.',
         'remove' => 'Remove Image',
         'uploaded' => 'Uploaded Image',
         'browse' => 'Browse..',

@@ -5,7 +5,7 @@
         </div>
         <div class="featured_post_wrapper">
             @foreach($featured_posts as $key=>$featured_post)
-                <div class="post_col {{($key == 0)?'active':''}}">
+                <div class="post_col {{($key == 0)?'':''}}">
                     <div class="slider--content--inner">
                         <div class="ctnt-col">
                         <div class="slider--content">

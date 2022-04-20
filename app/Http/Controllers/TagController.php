@@ -29,7 +29,7 @@ class TagController extends Controller
 
     public function store(Request $request)
     {
-        $attributes = request(['title', 'name','parent', 'tag_media', 'color', 'desc']);
+        $attributes = request(['title', 'name', 'parent', 'tag_media', 'on_home', 'color', 'desc']);
 
         $this->validate(request(), [
             'title' => Rule::unique('tags')->where(fn ($query) => $query->where(['title'=>$request->title,'parent'=>$request->parent])),
@@ -43,7 +43,9 @@ class TagController extends Controller
             Image::make($postimage)->resize(400, 200)->save(public_path('/uploads/'. $filename));
             $attributes['tag_media'] = $filename;
         }
-
+        if($request->has('on_home')){
+            Tag::query()->update(['on_home'=>'0']);
+        }
         Tag::create($attributes);
 
         session()->flash('message', 'Category Created!');
@@ -66,7 +68,7 @@ class TagController extends Controller
     {
         $tag = Tag::findOrFail($id);
 
-        $attributes = request(['title', 'name', 'parent', 'tag_media', 'color', 'desc']);
+        $attributes = request(['title', 'name', 'parent', 'tag_media', 'on_home', 'color', 'desc']);
 
         $this->validate(request(), [
             'title' => Rule::unique('tags')->where(fn ($query) => $query->where(['title'=>$request->title,'parent'=>$request->parent])->where('id','!=',$id)),
@@ -88,6 +90,13 @@ class TagController extends Controller
             $attributes['tag_media'] = $tag->tag_media ;
         }
 
+        if($request->has('on_home')) {
+            Tag::where("id","!=", $id)->update(['on_home'=>'0']);
+            $attributes['on_home'] = '1';
+        } else {
+            $attributes['on_home'] = '0';
+        }
+        
         $tag->update($attributes);
 
         session()->flash('message', 'Category Updated!');
