@@ -67,7 +67,18 @@ a {
     padding: 0px 15px;
 }
 .dark .slider--img::before {
-    filter: invert(1);
+    background: url(../Images/shape-02.png) !important;
+}
+.dark .slick-prev, .dark .slick-next {
+    border-color: #000;
+}
+.dark .slick-prev:hover, .dark .slick-next:hover{
+    background: #000;
+    border-color: #000;
+}
+ul.post--meta--list {
+    font-family: redhatdisplaymedium;
+    font-weight: 300 !important;
 }
 .main--title h2 {
     font-size: 36px;
@@ -112,7 +123,8 @@ a {
     font-size: 24px;
     text-align: center;
     line-height: 1.25;
-    
+    font-family: redhatdisplaybold;
+    font-weight: 700;
 }
 .slider-contant .slider--main--title {
     padding-bottom: 50px;
@@ -441,7 +453,7 @@ a {
 /* banner slider */
 .banner--slider-section {
     background-color: var(--bg-color-grey);
-    padding:  1rem 0 0.1rem;
+    padding:  0 0 0.1rem;
 }
 .banner--slider .slider--content--inner .slider--thumbnail img {
     width: 100%;
@@ -558,6 +570,9 @@ a {
     border: 1px solid var(--featured-box);
     padding: 35px 30px;
     border-radius: 10px;
+}
+.tab--slider .slider-animate-title {
+    margin-bottom: 10px;
 }
 .featured_post_wrapper .post_col .slider--content--inner {
     display: flex;

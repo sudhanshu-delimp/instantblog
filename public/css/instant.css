@@ -17,9 +17,10 @@
   --ql-gray: #918c8c;
   --crd-shdw: none;
   --box-border:#050505;
-  --bg-grey-box:#0f0d0a;
+  --bg-grey-box:#212121;
   --tab-bg:#050505;
   --featured-box:#1a1a1a;
+  --box--back:#ffffff47;
 }
 
 :root.light {
@@ -41,6 +42,7 @@
   --box-border:#ced0d4;
   --bg-grey-box:#f0f2f5;
   --featured-box:#ced0d4;
+  --box--back:#ffffff47;
 }
 
 html {
