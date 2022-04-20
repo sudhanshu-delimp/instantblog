@@ -21,6 +21,8 @@
   --tab-bg:#050505;
   --featured-box:#1a1a1a;
   --box--back:#ffffff47;
+  --search-box:#212121;
+  --search-bod:#050505;
 }
 
 :root.light {
@@ -43,6 +45,8 @@
   --bg-grey-box:#f0f2f5;
   --featured-box:#ced0d4;
   --box--back:#ffffff47;
+  --search-box:#fff;
+  --search-bod:#f0f2f5;
 }
 
 html {
