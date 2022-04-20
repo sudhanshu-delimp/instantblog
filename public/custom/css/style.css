@@ -11,7 +11,7 @@ body, html {
     font-family: redhatdisplaymedium;
     src: url(../fonts/redhatdisplaymedium.ttf);
   }
- h4, h2 {
+ h4, h2, h3 {
     font-family: redhatdisplaybold;
 }
 .fa-solid, .fas {
@@ -128,6 +128,10 @@ ul.post--meta--list {
 }
 .slider-contant .slider--main--title {
     padding-bottom: 50px;
+}
+.search_ryt_col .side_bar aside h3 {
+    font-size: 18px !important;
+    font-weight: 700;
 }
 .slider-contant .slider--main--title h4 a , .slider--content .slider--main--title h4 a {
     position: relative;
@@ -811,6 +815,11 @@ section.search_section .main--container .search_ryt_col {
     background: #000;
     margin: 0 auto;
     margin-top: 1rem;
+    color: #fff !important;
+    height: 50px;
+}
+a.btn.load_more_rest_post i {
+    font-size: 18px;
 }
 .search_ryt_col ul.social-icon i {
     width: 40px;
