@@ -1,5 +1,10 @@
 $(document).ready(function(){
-        
+    $.ajaxSetup({
+        headers: {
+           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
     $("#tab1").addClass("block--tab");
     $("#tab4").fadeIn();
     $('.tab--hover---title ul li a').click(function(e){
@@ -196,32 +201,32 @@ $(document).ready(function(){
         });
     });
 
-    $(".post_col").hover(
-        function() {
-            $(this).addClass('active');
-        }, function() {
-            $( this ).removeClass('active');
-        }
-        );
+$(".post_col").hover(
+function() {
+    $(this).addClass('active');
+}, function() {
+    $( this ).removeClass('active');
+}
+);
 
-        $(document).on("click",".load_more_rest_post",function(e){
-            e.preventDefault();
-            var data = {};
-            var ele = $(this);
-            var ele_parent = ele.parent();
-            data['existing_count'] = $(".sbs_rest_post_item").length;
-            data['last_id'] = $(this).attr('last-post-id'); 
-            data['restrict_data'] = $(this).attr('restrict-data');
-            $.ajax({
-                url:getRestPostsURL,
-                method:'post',
-                data:data,
-                beforeSend: function(){
-                    ele.html('<i class="fa fa-cog fa-spin fa-2x fa-fw"></i>');
-                },
-                success: function(response){
-                    ele.remove();
-                    ele_parent.append(response.content);
-                }
-            });
-        })
+$(document).on("click",".load_more_rest_post",function(e){
+    e.preventDefault();
+    var data = {};
+    var ele = $(this);
+    var ele_parent = ele.parent();
+    data['existing_count'] = $(".sbs_rest_post_item").length;
+    data['last_id'] = $(this).attr('last-post-id'); 
+    data['restrict_data'] = $(this).attr('restrict-data');
+    $.ajax({
+        url:getRestPostsURL,
+        method:'post',
+        data:data,
+        beforeSend: function(){
+            ele.html('<i class="fa fa-cog fa-spin fa-2x fa-fw"></i>');
+        },
+        success: function(response){
+            ele.remove();
+            ele_parent.append(response.content);
+        }
+    });
+})
