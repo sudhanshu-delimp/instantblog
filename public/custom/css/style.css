@@ -804,6 +804,14 @@ section.search_section .main--container .search_ryt_col {
     justify-content: center;
     gap: 10px;
 }
+.load_more_rest_post {
+    display: inline-block;
+    width: 200px;
+    padding: 12px 0;
+    background: #000;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
 .search_ryt_col ul.social-icon i {
     width: 40px;
     height: 40px;
