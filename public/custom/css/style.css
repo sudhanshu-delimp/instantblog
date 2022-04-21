@@ -438,9 +438,10 @@ ul.post--meta--list {
     width: 100%;
     opacity: 0;
 }
-.tab--hover--wrapper:hover .tab--hover-thumbnil img {
-    transform: scale(1);
+.tab--hover-section .show img {
+    visibility: visible;
     opacity: 1;
+    transform: scale(1);
 }
 .most--populer .main--title, .most--populer .tab--titles {
     padding: 0px;
@@ -925,7 +926,7 @@ button.search-button {
         height: 450px;
     }
     .slider--content--inner .slider--content {
-        width: 450px;
+        width: auto;
         right: 40px;
     }
     .banner--slider .slick-prev {

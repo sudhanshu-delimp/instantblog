@@ -230,3 +230,15 @@ $(document).on("click",".load_more_rest_post",function(e){
         }
     });
 })
+
+// most poppular post
+const containers = document.querySelectorAll('.tab--hover--wrapper');
+
+containers.forEach(f => f.addEventListener('mouseenter', function() {
+  containers.forEach(e => {
+    var div = e.querySelector('div');
+    div.classList.add('hidden');
+    div.classList.remove('show');
+  })
+  this.querySelector('div').classList.add('show')
+}))

@@ -23,6 +23,7 @@
                         <div id="tab{{$tag->id}}{{$keys}}" class="tab--hover-section" style="display: {{($keys==0)?'block':''}};">
                             @foreach($tag_posts as $key=>$tag_post)
                                 <div class="tab--hover--wrapper">
+                                  <div>
                                     <div class="tab--hover--inner">
                                         <div class="order--list">
                                             <span>{{ str_pad(($key+1),2,'0',STR_PAD_LEFT) }}</span>
@@ -71,6 +72,7 @@
                                             <img src="{{ url('/uploads/'.$tag_post->post_media) }}" alt="">
                                         </a>
                                     </div>
+                                 </div>
                                 </div>
                             @endforeach
                         </div>
