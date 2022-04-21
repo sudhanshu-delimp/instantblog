@@ -50,9 +50,11 @@
         </ul>
     </div>
     <div class="read--post--btn">
+        <div class="read-btn">
         <a href="{{url('/posts/'.$slider_post->post_slug)}}">
             <span class="hover-flip-item"><span data-hover="Read Post">Read Post</span></span>
         </a>
+      </div>
     </div>
     </div>
     </div>

@@ -528,10 +528,13 @@ ul.post--meta--list {
     padding: 13px 30px 10px;
     height: auto;
     border-radius: 50px;
-    transition: all 0.3s;
+    transition: all 0.5s;
     line-height: 20px;
     height: 50px;
     margin-top: 0.5em;
+}
+.read-btn:hover a {
+    transform: translate(10px, 13px);
 }
 .read--post--btn a:hover {
     background-color: transparent;
