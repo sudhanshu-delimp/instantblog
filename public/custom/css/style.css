@@ -809,10 +809,10 @@ section.search_section .main--container .search_ryt_col {
     gap: 10px;
 }
 .load_more_rest_post {
-    display: inline-block;
+    display: inline-block !important;
     width: 200px;
-    padding: 12px 0;
-    background: #000;
+    padding: 12px 0 !important;
+    background: #000 !important;
     margin: 0 auto;
     margin-top: 1rem;
     color: #fff !important;
