@@ -34,6 +34,9 @@ section.most--populer .tab--slider--inner h3 a{
 .post--meta--author * {
     color: #000;
 }
+.dark .post--meta--author * {
+    color: #fff;
+}
 nav#mainnav i {
     font-family: 'instanticon' !important;
 }
@@ -539,6 +542,25 @@ ul.post--meta--list {
 .read--post--btn a:hover {
     background-color: transparent;
     border: 2px solid #3858f6;
+}
+.social--data ul li .custom-tooltip {
+    position: absolute;
+    top: 2em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 10px;
+    background: #000;
+    display: inline-table;
+    padding: 2px 5px;
+    color: #fff;
+    transform: translate(-7px, 5px);
+    border-radius: 4px;
+    font-family: redhatdisplaymedium;
+    text-transform: capitalize;
+}
+.social--data ul li {
+    position: relative;
 }
 .slider--content--inner .read--post--btn {
     position: absolute;
