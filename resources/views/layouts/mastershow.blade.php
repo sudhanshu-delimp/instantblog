@@ -75,7 +75,7 @@
                   appId            : '{{ env("FACEBOOK_API_ID") }}',
                   autoLogAppEvents : true,
                   xfbml            : true,
-                  version          : 'v12.0'
+                  version          : 'v13.0'
                 });
             };
 
