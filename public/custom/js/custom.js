@@ -41,8 +41,8 @@ $(document).ready(function(){
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow:"<button type='button' class='slick-prev'><i class='fa-solid fa-arrow-left'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa-solid fa-arrow-right'></i></button>",
+        prevArrow:"<button type='button' class='slick-prev'><i class='fal fa-arrow-left'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fal fa-arrow-right'></i></button>",
         responsive: [
             {
             breakpoint: 991,
@@ -74,8 +74,8 @@ $(document).ready(function(){
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow:"<button type='button' class='slick-prev'><i class='fa-solid fa-arrow-left'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa-solid fa-arrow-right'></i></button>",
+        prevArrow:"<button type='button' class='slick-prev'><i class='fal fa-arrow-left'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fal fa-arrow-right'></i></button>",
         responsive: [
             {
             breakpoint: 991,
@@ -107,8 +107,8 @@ $(document).ready(function(){
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow:"<button type='button' class='slick-prev'><i class='fa-solid fa-arrow-left'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa-solid fa-arrow-right'></i></button>",
+        prevArrow:"<button type='button' class='slick-prev'><i class='fal fa-arrow-left'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fal fa-arrow-right'></i></button>",
         responsive: [
             {
             breakpoint: 991,
@@ -142,8 +142,8 @@ $(document).ready(function(){
         cssEase: 'linear',
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow:"<button type='button' class='slick-prev'><i class='fa-solid fa-arrow-left'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa-solid fa-arrow-right'></i></button>",
+        prevArrow:"<button type='button' class='slick-prev'><i class='fal fa-arrow-left'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fal fa-arrow-right'></i></button>",
         responsive: [
             {
             breakpoint: 991,
@@ -174,8 +174,8 @@ $(document).ready(function(){
         speed: 300,
         slidesToShow: 6,
         slidesToScroll: 1,
-        prevArrow:"<button type='button' class='slick-prev'><i class='fa-solid fa-arrow-left'></i></button>",
-        nextArrow:"<button type='button' class='slick-next'><i class='fa-solid fa-arrow-right'></i></button>",
+        prevArrow:"<button type='button' class='slick-prev'><i class='fal fa-arrow-left'></i></button>",
+        nextArrow:"<button type='button' class='slick-next'><i class='fal fa-arrow-right'></i></button>",
         responsive: [
             {
             breakpoint: 991,

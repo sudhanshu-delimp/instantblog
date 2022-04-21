@@ -11,6 +11,10 @@ body, html {
     font-family: redhatdisplaymedium;
     src: url(../fonts/redhatdisplaymedium.ttf);
   }
+  @font-face {
+    font-family: falight;
+    src: url(../font/fa-light-300.woff2);
+  }
  h4, h2, h3 {
     font-family: redhatdisplaybold;
 }
@@ -24,8 +28,11 @@ body, html {
 i {
     /* font-family: "Font Awesome 6 Brands" !important; */
 }
-a{
-    color: var(--text-color) !important;  
+section.most--populer .tab--slider--inner h3 a{
+     color: var(--text-color) !important;   
+}
+.post--meta--author * {
+    color: #000;
 }
 nav#mainnav i {
     font-family: 'instanticon' !important;
@@ -244,6 +251,7 @@ ul.post--meta--list {
 .slick-prev i, .slick-next i {
     font-size: 20px;
     color: #878787;
+    font-family: falight;
 }
 .slick-prev {
     left: 0px;
