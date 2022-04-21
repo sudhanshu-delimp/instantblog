@@ -10,6 +10,7 @@
 <link href="{{ asset('/custom/css/slick.css') }}" rel="stylesheet">
 <link href="{{ asset('/custom/css/slick-theme.css') }}" rel="stylesheet">
 <link href="{{ asset('/custom/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('/custom/font/font-awesome.css') }}" rel="stylesheet">
 
 <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ asset('/css/instant.css') }}" rel="stylesheet">

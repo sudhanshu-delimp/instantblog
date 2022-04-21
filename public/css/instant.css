@@ -3,7 +3,7 @@
 :root,
 :root.dark {
   --bg-color-grey: #212121;
-  --bg-color-white: #1A1A1A;
+  --bg-color-white: #1a1a1ad1;
   --bg-color: #1A1A1A;
   --text-color: #f8f9fa;
   --card-bg: #292e3c;
@@ -28,7 +28,7 @@
 :root.light {
   --tab-bg:#fff;
   --bg-color-grey: #f0f2f5;
-  --bg-color-white: #fff;
+  --bg-color-white: #ffffffe0;
   --bg-color: #f7f7f7;
   --text-color: #212529;
   --card-bg: #ffffff;
