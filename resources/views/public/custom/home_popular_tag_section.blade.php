@@ -57,10 +57,10 @@
                                                 </div>
                                                 <div class="social--data">
                                                     <ul>
-                                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fa-solid fa-link"></i></a></li>
+                                                        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url('/posts/'.$tag_post->post_slug)}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                                        <li><a target="_blank" href="https://twitter.com/share?{{url('/posts/'.$tag_post->post_slug)}}&text={{$tag_post->post_title}}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                                        <li><a target="_blank" href="http://www.linkedin.com/shareArticle?url={{url('/posts/'.$tag_post->post_slug)}}&title={{$tag_post->post_title}}"><i class="fa-brands fa-twitter"></i></a></li>
+                                                        <li><a href="{{url('/posts/'.$tag_post->post_slug)}}" class="copyURI" data-id="{{$tag_post->id}}"><i class="fa-solid fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
