@@ -45,7 +45,7 @@
         <ul>
             <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url('/posts/'.$slider_post->post_slug)}}"><i class="fa-brands fa-facebook-f"></i></a></li>
             <li><a target="_blank" href="http://www.linkedin.com/shareArticle?url={{url('/posts/'.$slider_post->post_slug)}}&title={{$slider_post->post_title}}"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a target="_blank" href="https://twitter.com/share?{{url('/posts/'.$slider_post->post_slug)}}&text={{$slider_post->post_title}}"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/share?url={{url('/posts/'.$slider_post->post_slug)}}&text={{$slider_post->post_title}}"><i class="fa-brands fa-twitter"></i></a></li>
             <li><a href="{{url('/posts/'.$slider_post->post_slug)}}" class="copyURI" data-id="{{$slider_post->id}}"><i class="fa-solid fa-link"></i></a></li>
         </ul>
     </div>
