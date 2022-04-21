@@ -242,3 +242,19 @@ containers.forEach(f => f.addEventListener('mouseenter', function() {
   })
   this.querySelector('div').classList.add('show')
 }))
+
+$(document).on("click",".copyURI",function(evt){
+    evt.preventDefault();
+    var copyText = $(this).attr('href');
+    var dataId = $(this).attr('data-id');
+    navigator.clipboard.writeText(copyText).then(() => {
+        $(this).after('<span class="custom-tooltip custom-tooltip-'+dataId+'">copied!</sapn>');
+        setTimeout(function(){
+            console.log("remove time");
+            $(document).find(".custom-tooltip-"+dataId).remove();
+            $(this).next().remove();
+        },2000);
+      }, () => {
+        /* clipboard write failed */
+      });
+});
