@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <!-- banner slider -->
-    @if(!empty($slider_posts))
+    @if(!$slider_posts->isEmpty())
         <section class="banner--slider-section">
             <div class="main--container">
                 <div class="banner--slider--wrapper">
@@ -20,34 +20,33 @@
 <!-- banner slider end -->
 
 <!-- Featured post -->
-@if(!empty($featured_posts))
+@if(!$featured_posts->isEmpty())
     @include('public.custom.featured_post')
 @endif
 <!-- Featured post end -->
 
 <!-- tab Section -->
-@if(!empty($home_tag) && !empty($home_sub_tags))
+@if(!empty($home_tag) && !$home_sub_tags->isEmpty())
     @include('public.custom.home_tag_section')  
 @endif
 
-@if(!empty($trending_topics))
+@if(!$trending_topics->isEmpty())
     @include('public.custom.trending_topics')
 @endif
 <!-- hover img section -->
-@if(!empty($popular_tags))
+@if(!$popular_tags->isEmpty())
     @include('public.custom.home_popular_tag_section')
 @endif
  <!-- search section -->
 <section class="search_section">
     <div class="main--container">
         <div class="search_left_col sbs_rest_posts">
-        @if(!empty($rest_posts))
+        @if(!$rest_posts->isEmpty())
             @include('public.custom.rest_posts_section')
         @endif
         </div>
         <div class="search_ryt_col">
         <div class="side_bar">
-
             <aside id="search-3" class="widget-sidebar widget widget_search widgets-sidebar"><div class="widget-title"><h3>Search</h3></div><div class="inner">
                 <form id="search-2" action="#" method="GET" class="blog-search">
                 <div class="axil-search form-group">
@@ -57,7 +56,6 @@
                 </form>
                 </div>
             </aside>
-
             <aside id="blobar_social_widget-2" class="widget-sidebar widget blobar_social_widget widgets-sidebar"><div class="widget-title"><h3>Stay In Touch</h3></div>            <ul class="social-icon md-size justify-content-center">
                 <li>
                 <a href="#">
@@ -86,10 +84,8 @@
                 </li>
                 </ul>
                 </aside>
-                
             <aside>
                 <div class="widget-title"><h3>Recent on Blogar</h3></div> 
-
                 <div class="post_col">
                     <div class="slider--content--inner">
                     <div class="ctnt-col">
@@ -115,14 +111,9 @@
                         <a href="#" tabindex="0">
                             <img src="http://localhost/instantblog_html/instantblog_local_html/assets/Images/post-column-01-390x260.jpg" alt="">
                         </a>
-
                     </div>
-
-
                     </div>
-
                </div>
-
                <div class="post_col">
                 <div class="slider--content--inner">
                 <div class="ctnt-col">

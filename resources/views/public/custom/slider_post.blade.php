@@ -19,7 +19,7 @@
     </div>
     <div class="slider--main--title">
     <h4>
-        <a href="#" tabindex="0">{{ str_limit($slider_post->post_title, 50) }}</a>
+        <a href="{{url('/posts/'.$slider_post->post_slug)}}" tabindex="0">{{ str_limit($slider_post->post_title, 50) }}</a>
     </h4>
     </div>
     <div class="tab--hover--meta">
@@ -30,7 +30,7 @@
         <div class="post--meta--content">
             <h5 class="post--meta--author">
                 <div class="post-cat-list">
-                    <a class="hover-flip-item-wrapper" href="#" tabindex="0">
+                    <a class="hover-flip-item-wrapper" href="{{ url('/profile/' . $slider_post->user->username) }}" tabindex="0">
                     <span class="hover-flip-item"><span data-hover="{{$slider_post->user->username}}">{{$slider_post->user->username}}</span></span>
                     </a>                 
                 </div>

@@ -12,7 +12,7 @@ use Validator;
 
 class CustomPostController extends Controller{
     public function index(){
-        $not_in_ids = $home_tag = $home_sub_tags= [];
+        $not_in_ids = $home_tag = $home_sub_tags= $home_tag_posts = [];
         $slider_posts = Post::latest()->take(5)->get();
         if(!empty($slider_posts)){
             foreach($slider_posts as $key=>$slider_post){

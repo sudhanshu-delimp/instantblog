@@ -34,7 +34,7 @@
                         <div class="post--meta--content">
                             <h5 class="post--meta--author">
                                 <div class="post-cat-list">
-                                    <a class="hover-flip-item-wrapper" href="#" tabindex="0">
+                                    <a class="hover-flip-item-wrapper" href="{{ url('/profile/' . $featured_post->user->username) }}" tabindex="0">
                                     <span class="hover-flip-item"><span data-hover="{{$featured_post->user->username}}">{{$featured_post->user->username}}</span></span>
                                     </a>                 
                                 </div>
