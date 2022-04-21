@@ -249,10 +249,9 @@ $(document).on("click",".copyURI",function(evt){
     var dataId = $(this).attr('data-id');
     navigator.clipboard.writeText(copyText).then(() => {
         $(this).after('<span class="custom-tooltip custom-tooltip-'+dataId+'">copied!</sapn>');
-       // setTimeout(function(){
-            $(document).find(".custom-tooltip-"+dataId).remove();
-            $(this).next().remove();
-        //},2000);
+        setTimeout(function(){
+            //$(document).find(".custom-tooltip-"+dataId).remove();
+        },2000);
       }, () => {
         /* clipboard write failed */
       });
