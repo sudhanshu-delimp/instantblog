@@ -48,7 +48,7 @@
         <div class="search_ryt_col">
         <div class="side_bar">
             <aside id="search-3" class="widget-sidebar widget widget_search widgets-sidebar"><div class="widget-title"><h3>Search</h3></div><div class="inner">
-                <form id="search-2" action="#" method="GET" class="blog-search">
+                <form id="search-2" action="{{ url('/search') }}" method="get" class="blog-search">
                 <div class="axil-search form-group">
                 <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <input type="text" name="s" placeholder="Search ..." value="">
