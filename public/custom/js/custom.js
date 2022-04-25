@@ -250,7 +250,7 @@ $(document).on("click",".copyURI",function(evt){
     navigator.clipboard.writeText(copyText).then(() => {
         $(this).after('<span class="custom-tooltip custom-tooltip-'+dataId+'">copied!</sapn>');
         setTimeout(function(){
-            //$(document).find(".custom-tooltip-"+dataId).remove();
+            $(document).find(".custom-tooltip-"+dataId).remove();
         },2000);
       }, () => {
         /* clipboard write failed */
