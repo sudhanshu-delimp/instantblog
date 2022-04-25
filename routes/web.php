@@ -23,7 +23,7 @@ use App\Http\Controllers\CustomPostController;
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin');
 
-Route::get('/', [PublicPostController::class, 'index']);
+//Route::get('/', [PublicPostController::class, 'index']);
 Route::get('posts/{post}', [PublicPostController::class, 'show']);
 Route::get('archives', [PublicPostController::class, 'archives']);
 Route::get('archiveposts', [PublicPostController::class, 'archiveposts']);
@@ -84,7 +84,7 @@ Route::resource('profile', ProfileController::class);
 Route::get('auth/{driver}', [LoginController::class, 'redirectToProvider']);
 Route::get('auth/{driver}/callback', [LoginController::class, 'handleProviderCallback']);
 
-Route::get('blog', [CustomPostController::class, 'index']);
+Route::get('/', [CustomPostController::class, 'index']);
 Route::post('blog/getRestPosts', [CustomPostController::class, 'getRestPosts']);
 
 Route::get('instant/clear', function() {
