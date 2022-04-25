@@ -84,7 +84,7 @@
                 </li>
                 </ul>
                 </aside>
-            <aside>
+            <aside class="hide_section">
                 <div class="widget-title"><h3>Recent on Blogar</h3></div> 
                 <div class="post_col">
                     <div class="slider--content--inner">
@@ -148,7 +148,7 @@
            </div>
             </aside>
 
-                <aside id="media_gallery-2" class="widget-sidebar widget widget_media_gallery widgets-sidebar"><div class="widget-title"><h3>Gallery</h3></div><div id="gallery-1" class="gallery galleryid-361 gallery-columns-3 gallery-size-thumbnail"><figure class="gallery-item">
+                <aside id="media_gallery-2" class="widget-sidebar widget widget_media_gallery widgets-sidebar hide_section"><div class="widget-title"><h3>Gallery</h3></div><div id="gallery-1" class="gallery galleryid-361 gallery-columns-3 gallery-size-thumbnail"><figure class="gallery-item">
                     <div class="gallery-icon landscape">
                     <img width="150" height="150" src="assets/Images/banner--slider-img.jpg" class="attachment-thumbnail size-thumbnail" alt="demo_image-26" loading="lazy" srcset="https://axilthemes.com/themes/blogar/wp-content/uploads/2021/01/demo_image-26-150x150.jpg 150w, https://axilthemes.com/themes/blogar/wp-content/uploads/2021/01/demo_image-26-300x300.jpg 300w, https://axilthemes.com/themes/blogar/wp-content/uploads/2021/01/demo_image-26-100x100.jpg 100w" sizes="(max-width: 150px) 100vw, 150px">
                     </div></figure><figure class="gallery-item">

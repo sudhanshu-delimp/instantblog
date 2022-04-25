@@ -168,11 +168,12 @@ $(document).ready(function(){
         ]
         });
 
+     // Trending Topics   
     $('.slider-nav').slick({
         dots: true,
         infinite: true,
         speed: 300,
-        slidesToShow: 6,
+        slidesToShow: 4,
         slidesToScroll: 1,
         prevArrow:"<button type='button' class='slick-prev'><i class='fal fa-arrow-left'></i></button>",
         nextArrow:"<button type='button' class='slick-next'><i class='fal fa-arrow-right'></i></button>",
@@ -201,6 +202,10 @@ $(document).ready(function(){
         });
     });
 
+    // Trending Topics end
+
+    // More Featured Posts
+
 $(".post_col").hover(
 function() {
     $(this).addClass('active');
@@ -208,6 +213,7 @@ function() {
     $( this ).removeClass('active');
 }
 );
+// More Featured Posts end
 
 $(document).on("click",".load_more_rest_post",function(e){
     e.preventDefault();
