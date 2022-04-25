@@ -13,7 +13,7 @@
                     <div class="box_item">
                     <a href="{{url('/category/'.$trending_topic->name)}}">
                     <img src="{{ url('/uploads/'.$trending_topic->tag_media) }}" alt="">
-                    <h5 class="title"> {{$trending_topic->title}} </h5></a>  
+                    <h5 class="title {{$trending_topic->color}}"> {{$trending_topic->title}} </h5></a>  
                     </div>
                 </div>
                 @endforeach
