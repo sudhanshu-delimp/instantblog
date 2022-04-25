@@ -16,7 +16,6 @@
             {!! $setting->site_analytic !!}
         @endif
     </head>
-    x
 
         @include('layouts.nav')
 
