@@ -24,7 +24,7 @@ class CustomPostController extends Controller{
         if(!empty($home_tag)){
             $home_sub_tags = Tag::where(['parent'=>$home_tag->id])->whereHas('posts')->get();
         }
-        $popular_tags = Tag::orderBy('counter', 'desc')->take(4)->get();
+        $popular_tags = Tag::orderBy('counter', 'desc')->whereHas('posts')->take(4)->get();
         $trending_topics = Tag::where(['parent'=>'0'])->whereHas('posts')->get();
         $not_in_ids = implode(",",$not_in_ids);
         $rest_posts = Post::where(['post_live'=>1])
