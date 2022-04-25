@@ -42,7 +42,7 @@ class SettingController extends Controller
 
         if ($request->hasFile('site_logo_light')) {
             $postimage = $request->file('site_logo_light');
-            $filename = time() . '.' . $postimage->getClientOriginalExtension();
+            $filename = time() . 'site_logo_light.' . $postimage->getClientOriginalExtension();
             Image::make($postimage)->resize(null, 35, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path('/images/'. $filename));
