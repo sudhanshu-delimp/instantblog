@@ -13,13 +13,13 @@ use Validator;
 class CustomPostController extends Controller{
     public function index(){
         $not_in_ids = $home_tag = $home_sub_tags= $home_tag_posts = [];
-        $slider_posts = Post::latest()->take(5)->get();
+        $slider_posts = Post::where(['post_live'=>1])->latest()->take(5)->get();
         if(!empty($slider_posts)){
             foreach($slider_posts as $key=>$slider_post){
                 $not_in_ids[] = $slider_post->id;
             }
         }
-        $featured_posts = Post::where(['is_featured'=>1])->orderBy('id', 'desc')->take(2)->get();
+        $featured_posts = Post::where(['is_featured'=>1,'post_live'=>1])->orderBy('id', 'desc')->take(2)->get();
         $home_tag = Tag::where(['on_home'=>'1'])->first();
         if(!empty($home_tag)){
             $home_sub_tags = Tag::where(['parent'=>$home_tag->id])->whereHas('posts')->get();
@@ -49,6 +49,7 @@ class CustomPostController extends Controller{
         $rest_post_count = $this->getRestPostCount();
         $rest_posts = Post::where(['post_live'=>1])
         ->where("id","<",$last_id)
+        ->where(['post_live'=>1])
         ->whereNotIn('id',explode(",",$not_in_ids))
         ->orderBy('id','desc')
         ->take(5)

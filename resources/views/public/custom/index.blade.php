@@ -26,7 +26,7 @@
 <!-- Featured post end -->
 
 <!-- tab Section -->
-@if(!empty($home_tag) && !$home_sub_tags->isEmpty())
+@if(!empty($home_tag))
     @include('public.custom.home_tag_section')  
 @endif
 

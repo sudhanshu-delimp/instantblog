@@ -20,7 +20,8 @@
                     @foreach($home_sub_tags as $key=>$home_sub_tag)
                     <div id="tab{{$home_sub_tag->id}}" class="tab--slider-tabs {{($key==0)?'block--tab':''}}">
                         <div class="tab---sliders">
-                            @foreach($home_sub_tag->posts as $key=>$post)
+                           @php ($home_sub_tag_posts = $home_sub_tag->posts()->where(['post_live'=>1])->latest()->take(10)->get())
+                            @foreach($home_sub_tag_posts as $key=>$post)
                                 <div class="slider--content--wrapper">
                                     <div class="slider-contant--main">
                                         <div class="slider-contant">
@@ -53,7 +54,8 @@
                     @endforeach
                     @elseif(!empty($home_tag))
                         <div class="tab---sliders">
-                            @foreach($home_tag->posts as $key=>$post)
+                        @php ($home_tag_posts = $home_tag->posts()->where(['post_live'=>1])->latest()->take(10)->get())
+                            @foreach($home_tag_posts as $key=>$post)
                                 <div class="slider--content--wrapper">
                                     <div class="slider-contant--main">
                                         <div class="slider-contant">

@@ -18,7 +18,7 @@
                 @if(!empty($popular_tags))
                     @foreach($popular_tags as $keys=>$tag)
                         <?php 
-                            $tag_posts =  $tag->posts()->orderBy('counter','desc')->take(4)->get();
+                            $tag_posts =  $tag->posts()->where(['post_live'=>1])->latest()->take(4)->get();
                         ?>
                         <div id="tab{{$tag->id}}{{$keys}}" class="tab--hover-section" style="display: {{($keys==0)?'block':''}};">
                             @foreach($tag_posts as $key=>$tag_post)
